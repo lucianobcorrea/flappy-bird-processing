@@ -25,9 +25,12 @@ class Bird {
       end=false;
     }
     for (int i = 0; i<3; i++) {
-      if ((xPos<p[i].xPos+10&&xPos>p[i].xPos-10)&&(yPos<p[i].opening-125||yPos>p[i].opening+50)) {
+      if ((xPos<p[i].xPos+35&&xPos>p[i].xPos-35)&&(yPos<p[i].opening-125||yPos>p[i].opening+50)) {
         end=false;
       }
     }
+  }
+  boolean validateCollisionPilar(int x, int y, float px, float py) {
+    return (x < px+20 && x > px-20) && (y < py-125 || y > py+50);
   }
 }
