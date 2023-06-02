@@ -6,9 +6,10 @@ boolean end=false;
 boolean intro=true;
 int score=0;
 boolean hasUser = false;
+PImage bg;
 
 void setup() {
-  size(500, 800);
+  size(500, 750);
   TextBox userTB = new TextBox();
   userTB.X = 160;
   userTB.Y = 103;
@@ -20,10 +21,11 @@ void setup() {
     p[i]= new Pillar(i);
   }
   textboxes.add(userTB);
+  bg = loadImage("bg.jpg");
 }
 
 void draw() {
-  background(0);
+  background(bg);
 
   if (end) {
     b.move();
