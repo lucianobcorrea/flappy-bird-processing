@@ -7,6 +7,8 @@ boolean intro=true;
 int score=0;
 boolean hasUser = false;
 PImage bg;
+int bgx;
+int bgy;
 
 void setup() {
   size(500, 750);
@@ -31,7 +33,7 @@ void draw() {
   noTint();
 
   if (hasUser && end) {
-    background(bg);
+    setBackground();
   }
 
   if (end) {
@@ -93,6 +95,14 @@ void Submit() {
   }
 }
 
+void setBackground() {
+  image(bg, bgx, bgy);
+    image(bg, bgx + bg.width, bgy);
+    bgx = bgx - 1;
+    if(bgx < -bg.width) {
+      bgx = 0;
+    }
+}
 
 void mousePressed() {
   for (TextBox t : textboxes) {
@@ -112,6 +122,13 @@ void keyPressed() {
     if (t.KEYPRESSED(key, (int)keyCode)) {
       Submit();
     }
+    
+    if(keyCode == BACKSPACE) {
+      hasUser = false;
+      end = false;
+      intro = true;
+    }
+    
     b.jump();
     if (end) {
       intro = false;
