@@ -7,8 +7,8 @@ class Pillar {
   Pillar(int i) {
     xPos = 100+(i*200);
     opening = random(400)+100;
-    pillarTop = loadImage("pillarTop.png");
-    pillarBotton = loadImage("pillarBotton.png");
+    pillarTop = loadImage("./assets/pillarTop.png");
+    pillarBotton = loadImage("./assets/pillarBotton.png");
   }
   
   void drawPillar() {

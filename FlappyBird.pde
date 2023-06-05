@@ -18,12 +18,12 @@ void setup() {
   userTB.W = 200;
   userTB.H = 35;
 
-  bird = loadImage("bird.png");
+  bird = loadImage("./assets/bird.png");
   for (int i = 0; i<3; i++) {
     p[i]= new Pillar(i);
   }
   textboxes.add(userTB);
-  bg = loadImage("bg.jpg");
+  bg = loadImage("./assets/bg.jpg");
 }
 
 void draw() {
@@ -88,7 +88,8 @@ void reset() {
 }
 
 void Submit() {
-  if (textboxes.get(0).TextLength > 0) {
+  String text = textboxes.get(0).Text.trim();
+  if (text.length() > 0) {
     hasUser = true;
   } else {
     hasUser = false;
