@@ -25,7 +25,14 @@ void setup() {
 }
 
 void draw() {
-  background(bg);
+  background(0);
+  tint(255, 100);
+  image(bg, 0, 0, width, height);
+  noTint();
+
+  if (hasUser && end) {
+    background(bg);
+  }
 
   if (end) {
     b.move();
@@ -47,17 +54,18 @@ void draw() {
     fill(255);
     text(score, 30, 58);
   } else {
-    rect(150, 200, 200, 100);
+    rect(160, 200, 200, 100, 5);
     fill(255);
     if (intro) {
-      text("User", (width - textWidth("User")) / 2, 60);
+      text("User", (width - textWidth("User")) / 2, 80);
       textSize(15);
 
       for (TextBox t : textboxes) {
         t.DRAW();
       }
+
       fill(255);
-      text("Enter your name\n and press enter", 155, 240);
+      text("Enter your name\n and press enter", 175, 240);
     } else {
       text("Game Over", 170, 140);
       text("Score", 180, 240);

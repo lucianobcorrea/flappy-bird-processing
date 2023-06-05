@@ -3,9 +3,9 @@ public class TextBox {
    public int TEXTSIZE = 24;
    
    // COLORS
-   public color Background = color(140, 140, 140);
-   public color Foreground = color(0, 0, 0);
-   public color BackgroundSelected = color(160, 160, 160);
+   public color Background = color(0);
+   public color Foreground = color(0);
+   public color BackgroundSelected = color(50);
    public color Border = color(30, 30, 30);
    
    public boolean BorderEnable = false;
@@ -35,14 +35,12 @@ public class TextBox {
       if (BorderEnable) {
          strokeWeight(BorderWeight);
          stroke(Border);
-      } else {
-         noStroke();
-      }
+      } 
       
-      rect(X, Y, W, H);
+      rect(X, Y, W, H, 5);
       
       // DRAWING THE TEXT ITSELF
-      fill(Foreground);
+      fill(255);
       textSize(TEXTSIZE);
       text(Text, X + (textWidth("a") / 2), Y + TEXTSIZE);
    }

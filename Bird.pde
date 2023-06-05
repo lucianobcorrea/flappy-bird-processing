@@ -21,16 +21,16 @@ class Bird {
   }
   
   void checkCollisions() {
-    if (yPos>900) {
+    if (yPos>800) {
       end=false;
     }
     for (int i = 0; i<3; i++) {
-      if ((xPos<p[i].xPos+35&&xPos>p[i].xPos-35)&&(yPos<p[i].opening-125||yPos>p[i].opening+50)) {
+      if ((xPos<p[i].xPos+35&&xPos>p[i].xPos-35)&&(yPos<p[i].opening-147||yPos>p[i].opening+60)) {
         end=false;
       }
     }
   }
   boolean validateCollisionPilar(int x, int y, float px, float py) {
-    return (x < px+20 && x > px-20) && (y < py-125 || y > py+50);
+    return (x < px+35 && x > px-35) && (y < py-147 || y > py+60);
   }
 }
